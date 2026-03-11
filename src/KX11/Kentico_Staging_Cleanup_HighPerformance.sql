@@ -79,13 +79,13 @@ PRINT '';
 DECLARE @OriginalRecoveryModel VARCHAR(20);
 SELECT @OriginalRecoveryModel = recovery_model_desc 
 FROM sys.databases 
-WHERE name = 'Neutron';
+WHERE name = 'database';
 
 PRINT '  Original Recovery Model: ' + @OriginalRecoveryModel;
 
 IF @OriginalRecoveryModel <> 'SIMPLE'
 BEGIN
-    ALTER DATABASE Neutron SET RECOVERY SIMPLE;
+    ALTER database database SET RECOVERY SIMPLE;
     PRINT '  Switched to SIMPLE recovery mode for cleanup.';
     PRINT '  This allows log truncation between batches.';
 END
@@ -292,9 +292,9 @@ PRINT '';
 IF @OriginalRecoveryModel <> 'SIMPLE'
 BEGIN
     IF @OriginalRecoveryModel = 'FULL'
-        ALTER DATABASE Neutron SET RECOVERY FULL;
+        ALTER DATABASE database SET RECOVERY FULL;
     ELSE IF @OriginalRecoveryModel = 'BULK_LOGGED'
-        ALTER DATABASE Neutron SET RECOVERY BULK_LOGGED;
+        ALTER DATABASE database SET RECOVERY BULK_LOGGED;
     
     PRINT '  Restored to ' + @OriginalRecoveryModel + ' recovery mode.';
     PRINT '  IMPORTANT: Take a full backup to re-establish log chain!';

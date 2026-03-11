@@ -28,5 +28,5 @@ WHERE wp.WebPartProperties IS NOT NULL
          wp.WebPartProperties LIKE '%text%' AND
          wp.WebPartProperties NOT LIKE '%columntype="password"%')
     )
-    AND (wp.WebPartFileName NOT LIKE 'Cady%')
+    AND (wp.WebPartFileName NOT LIKE '%') -- Exclude WebParts with filenames containing '%' 
 ORDER BY wp.WebPartName;

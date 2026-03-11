@@ -63,6 +63,6 @@ PRINT 'Cleanup completed in ' +
       CAST(DATEDIFF(SECOND, @StartTime, GETDATE()) AS VARCHAR(10)) + 
       ' seconds';
 PRINT 'Total records deleted: ' + CAST(@DeletedCount AS VARCHAR(20));
-PRINT 'Remaining records in Cady_SmsQueue: ' + CAST(@RemainingRecords AS VARCHAR(20));
+PRINT 'Remaining records: ' + CAST(@RemainingRecords AS VARCHAR(20));
 PRINT '---------------------------------------------------';
 GO

@@ -8,7 +8,7 @@ WITH RankedEvents AS (
             PARTITION BY LEFT(EventDescription, 60), EventUrl
             ORDER BY EventTime DESC
         ) AS rn
-    FROM [Neutron].[dbo].[CMS_EventLog]
+    FROM [CMS_EventLog]
     WHERE EventType = 'E'
       AND EventDescription LIKE '%macro%'
 )

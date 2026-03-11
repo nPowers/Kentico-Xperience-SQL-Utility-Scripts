@@ -6,7 +6,7 @@ WITH CleanedEvents AS (
                 THEN SUBSTRING(EventDescription, LEN('Error while evaluating expression: ') + 1, LEN(EventDescription))
             ELSE EventDescription
         END AS EventDescriptionNoPrefix
-    FROM [Neutron].[dbo].[CMS_EventLog]
+    FROM [CMS_EventLog]
     WHERE EventType = 'E'
       AND EventDescription LIKE '%macro%'
 ),

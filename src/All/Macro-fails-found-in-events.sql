@@ -9,7 +9,7 @@ WITH RankedEvents AS (
             ORDER BY EventTime DESC
         ) AS rn,
         EventDescription AS FullEventDescription
-    FROM [Neutron].[dbo].[CMS_EventLog]
+    FROM [CMS_EventLog]
     WHERE EventType = 'E'
       AND EventDescription LIKE '%macro%'
 )
