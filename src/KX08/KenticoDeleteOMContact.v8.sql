@@ -20,7 +20,7 @@ DECLARE @EndDate    DATETIME
 --SET @StartDate = DATEADD(yyyy, -2, DATEADD(dd, 1, GETDATE()))
 SET @StartDate = '2/14/2015'
 --SET @EndDate = DATEADD(yyyy, -1, DATEADD(dd, 1, GETDATE()))
-SET @EndDate = '2/14/2015'
+SET @EndDate = '1/01/2025'
 
 --How many to delete at a time, be careful!
 SET @batchSize = 10000

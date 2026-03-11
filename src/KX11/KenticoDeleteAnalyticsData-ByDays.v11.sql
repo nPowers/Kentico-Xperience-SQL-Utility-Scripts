@@ -12,7 +12,7 @@
 /* Take a backup first! Don't be THAT guy!      */
 
 
-declare @DaysToKeep int = 548; /* MODIFY ME */
+declare @DaysToKeep int = 365; /* MODIFY ME */
 declare @CutOffDate datetime = null;
 
 -- Creates the cut off point
